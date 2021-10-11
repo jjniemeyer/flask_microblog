@@ -16,6 +16,7 @@ def before_request():
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
 
+
 @app.route('/')
 @app.route('/index')
 @login_required

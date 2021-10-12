@@ -21,33 +21,16 @@ def before_request():
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    form = PostForm
+    form = PostForm()
     if form.validate_on_submit():
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash("Your post is now live!")
+        flash('Your post is now live!')
         return redirect(url_for('index'))
-    posts = [
-        {
-            'author': {'username': 'jpants'},
-            'body': 'who even are these people?'
-        },
-        {
-            'author': {'username': 'notabot'},
-            'body': 'these are not robots'
-        },
-        {
-            'author': {'username': 'skeptic_system'},
-            'body': 'I\'m not so sure about that'
-        },
-        {
-            'author': {'username': 'notabot'},
-            'body': '@skeptic_system is an idiot'
-        }
-
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    posts = current_user.followed_posts().all()
+    return render_template("index.html", title='Home Page', form=form,
+                           posts=posts)
 
 
 @app.route('/login', methods=['GET', 'POST'])

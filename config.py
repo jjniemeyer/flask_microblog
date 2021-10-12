@@ -17,5 +17,5 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['jani5714@colorado.edu']
 
-    #config for pagination, LIMIT POSTS TO 3 for testing, more later
-    POSTS_PER_PAGE = 3
+    #config for pagination
+    POSTS_PER_PAGE = 20

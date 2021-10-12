@@ -12,6 +12,9 @@
                 {% if user == current_user %}
                 <p><a href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
                 {% elif not current_user.is_following(user) %}
+                <!-- The original creator of this project used <p> tags but I kept getting errors
+                    So I embedded the forms in <div> instead
+                    forms in <p> tags are not up to w3 spec...WATCH OUT for this when followin Original styling-->
                 <div>
                     <form action="{{ url_for('follow', username=user.username) }}" method="post">
                         {{ form.hidden_tag() }}
@@ -33,4 +36,10 @@
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer posts</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}">Older posts</a>
+    {% endif %}
 {% endblock %}

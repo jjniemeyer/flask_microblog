@@ -49,3 +49,8 @@ class EmptyForm(FlaskForm):
     # empty form allows user to follow/unfollow other user
     # via a POST request instead on an insecure GET request
     submit = SubmitField('Submit')
+
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Submit')

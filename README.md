@@ -10,7 +10,7 @@ I will likely customize this app a little but I'm primarily keeping it around fo
 The following environment variable need to be set in order to send emails from the app.
 
 ### Gmail
-In order to use a gmail acount as an email server we need to explicitly allow "less secure apps" access to your Gmail account.
+In order to use a gmail account as an email server we need to explicitly allow "less secure apps" access to the gmail account.
 
 ```
 (venv) $ export MAIL_SERVER=smtp.googlemail.com

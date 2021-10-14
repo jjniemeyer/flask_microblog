@@ -18,4 +18,4 @@ class Config(object):
     ADMINS = ['jani5714@colorado.edu']
 
     #config for pagination
-    POSTS_PER_PAGE = 20
+    POSTS_PER_PAGE = 10

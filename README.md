@@ -19,4 +19,3 @@ In order to use a gmail account as an email server we need to explicitly allow "
 (venv) $ export MAIL_USERNAME=<your-gmail-username>
 (venv) $ export MAIL_PASSWORD=<your-gmail-password>
 ```
-#### small pointless change

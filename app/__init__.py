@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -51,4 +51,8 @@ if not app.debug:
 
         app.logger.setLevel(logging.INFO)
         app.logger.info('Microblog startup')
-        
+
+
+@babel.localeselector:
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])

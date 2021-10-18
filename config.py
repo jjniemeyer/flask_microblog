@@ -21,3 +21,6 @@ class Config(object):
     POSTS_PER_PAGE = 10
 
     LANGUAGES = ['en', 'es']
+
+    # MS TRANSLATOR...I'm not keeping this account long, so translation will probably be broken soon after the app is finished
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')

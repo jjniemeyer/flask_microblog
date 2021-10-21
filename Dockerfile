@@ -2,7 +2,7 @@ FROM python:slim
 
 RUN useradd microblog
 
-WORKDIR = /home/microblog
+WORKDIR /home/microblog
 
 COPY requirements.txt requirements.txt
 RUN python -m venv venv

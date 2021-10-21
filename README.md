@@ -19,3 +19,16 @@ In order to use a gmail account as an email server we need to explicitly allow "
 (venv) $ export MAIL_USERNAME=<your-gmail-username>
 (venv) $ export MAIL_PASSWORD=<your-gmail-password>
 ```
+
+## Docker
+
+The tutorial says to run the container like this:
+```
+docker run --name microblog -d -p 8000:5000 --rm microblog:latest
+```
+However, according the man page for docker run: `--rm` 
+is incompatible with detached mode `-d`. 
+In order to get the container running I'm using:
+```
+docker run --name microblog -d -p 8000:5000 microblog:latest
+```

@@ -32,3 +32,7 @@ In order to get the container running I'm using:
 ```
 docker run --name microblog -d -p 8000:5000 microblog:latest
 ```
+
+
+
+---testing ssh---
